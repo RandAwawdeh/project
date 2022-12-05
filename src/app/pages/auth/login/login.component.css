@@ -1,0 +1,18 @@
+.main{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ededed;
+}
+.login-card{
+  min-width: 300px;
+  max-width: 900px;
+  min-height: 300px;
+  box-shadow: 5px 10px 12px #888888;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  
+}
