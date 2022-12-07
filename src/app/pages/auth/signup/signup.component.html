@@ -1,1 +1,35 @@
-<p>signup works!</p>
+<div class="main">
+  <div class="login-card">
+    <h3>Signup</h3>
+
+    <mat-form-field appearance="fill" class="field-width">
+      <mat-label>Name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-width">
+      <mat-label>ِAge</mat-label>
+      <input matInput type="number">
+    </mat-form-field>
+
+    <mat-radio-group aria-label="Select an option" class="field-width">
+      <mat-radio-button value="male">male</mat-radio-button>
+      <mat-radio-button value="female">female</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="fill" class="field-width">
+      <mat-label>Email</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field-width">
+      <mat-label>Password</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary"  (click)="onSignupClicked()">Signup</button>
+
+    <a [routerLink]="['/auth/login']">login</a>
+  </div>
+</div>
