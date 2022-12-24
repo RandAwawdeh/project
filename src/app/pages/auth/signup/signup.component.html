@@ -1,35 +1,52 @@
 <div class="main">
-  <div class="login-card">
-    <h3>Signup</h3>
+  <div class="signup-card">
+    <h2>Signup as Company</h2>
+    <form [formGroup]="formGroup">
+      <div class="row">
 
-    <mat-form-field appearance="fill" class="field-width">
-      <mat-label>Name</mat-label>
-      <input matInput>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Name</mat-label>
+          <input matInput type="text" formControlName="name">
+        </mat-form-field>
 
-    <mat-form-field appearance="fill" class="field-width">
-      <mat-label>ِAge</mat-label>
-      <input matInput type="number">
-    </mat-form-field>
+        <mat-form-field appearance="outline" >
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email">
+        </mat-form-field>
 
-    <mat-radio-group aria-label="Select an option" class="field-width">
-      <mat-radio-button value="male">male</mat-radio-button>
-      <mat-radio-button value="female">female</mat-radio-button>
-    </mat-radio-group>
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput type="number" formControlName="phone">
+        </mat-form-field>
 
-    <mat-form-field appearance="fill" class="field-width">
-      <mat-label>Email</mat-label>
-      <input matInput>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Logo</mat-label>
+          <input matInput type="url" formControlName="logo">
+        </mat-form-field>
 
-    <mat-form-field appearance="fill" class="field-width">
-      <mat-label>Password</mat-label>
-      <input matInput>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Website</mat-label>
+          <input matInput type="url" formControlName="website">
+        </mat-form-field>
 
+        <mat-form-field appearance="outline" >
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        </div>
+
+        <mat-radio-group aria-label="Select an option" formControlName="type">
+          <mat-radio-button value="NGO">NGO</mat-radio-button>
+          <mat-radio-button value="Goverment">Goverment</mat-radio-button>
+          <mat-radio-button value="Religious">Religious</mat-radio-button>
+        </mat-radio-group>
+    </form>
 
     <button mat-raised-button color="primary"  (click)="onSignupClicked()">Signup</button>
 
     <a [routerLink]="['/auth/login']">login</a>
   </div>
+
+  <app-t-signup></app-t-signup>
+
 </div>

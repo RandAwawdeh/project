@@ -9,3 +9,46 @@ html,body{
 body{
   margin: 0;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: #081a2f;
+  --mdc-radio-selected-hover-icon-color: #081a2f;
+  --mdc-radio-selected-icon-color: #081a2f;
+  --mdc-radio-selected-pressed-icon-color: #081a2f;
+  --mat-mdc-radio-checked-ripple-color: #081a2f;
+}
+
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+color: rgba(1, 18, 49, 0.71);
+}
+.mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: var(--mdc-theme-primary, #081a2f);
+}
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #081a2f;
+}
+
+.mdc-text-field .mdc-text-field__input {
+  caret-color: var(--mdc-theme-primary, #081a2f);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: white;
+}
+
+.mdc-text-field__input:focus{
+  /* outline: none; */
+  outline: #ff8c00  !important;
+  border-color: #ff8c00;
+}
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+  color: green;
+}
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color:green;
+}

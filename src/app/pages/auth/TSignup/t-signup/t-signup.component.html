@@ -1,0 +1,60 @@
+<div class="signup-card">
+  <h2>Signup as Technical</h2>
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Full Name</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>ِAge</mat-label>
+        <input matInput type="number" formControlName="age">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="number" formControlName="phone">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>City</mat-label>
+        <input matInput type="text" formControlName="city">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Skills</mat-label>
+        <input matInput type="text" formControlName="skills">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Jop desciption</mat-label>
+        <input matInput type="text" formControlName="job-desc">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Courses</mat-label>
+        <input matInput type="text" formControlName="courses">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Available time</mat-label>
+        <input matInput type="text" formControlName="available-time">
+      </mat-form-field>
+    </div>
+  </form>
+
+  <button mat-raised-button color="primary"  (click)="onSignupClicked()">Signup</button>
+
+  <a [routerLink]="['/auth/login']">login</a>
+</div>
