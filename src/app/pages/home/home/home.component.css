@@ -1,0 +1,109 @@
+mat-toolbar{
+  background-color: #06090e;
+  color: #F9F7F7;
+  justify-content: space-between;
+}
+mat-toolbar button{
+  margin-left: 2px;
+  padding: 5px;
+font-size: smaller;
+justify-content: center;
+align-items: center;
+background-color: #06090e;
+color: #F9F7F7;
+}
+main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #06090e;
+
+}
+section{
+  margin: auto;
+}
+.main{
+  background: url(./img/IMG2.jpg) ;
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+  color: #F9F7F7;
+}
+.main h1{
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.main p{
+  font-size: 0.8rem;
+  font-weight: lighter;
+  width: 40%;
+  opacity: 0.8;
+}
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #06090e;
+  width: 100%;
+}
+.card{
+  width: 300px;
+  color: #8a889b;
+
+  border-radius: 28px;
+  background: linear-gradient(145deg, #05080d, #060a0f);
+  box-shadow:  5px 5px 6px #05080c,
+               -5px -5px 6px #070a10;
+}
+
+mat-card-subtitle{
+  color: #d97242;
+  font-weight: lighter;
+
+
+}
+
+.logo-cards-container{
+  background-color: #06090e;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+.logo-card{
+  border-radius: 28px;
+  background: linear-gradient(145deg, #05080d, #060a0f);
+  box-shadow:  5px 5px 6px #05080c,
+               -5px -5px 6px #070a10;
+  min-width: 140px;
+  min-height: 60px;
+  color:whitesmoke;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+}
+.logo-card h5{
+  font-weight: 500;
+  font-size: 0.8em;
+  color: #a1a1a1;
+  margin: 0;
+}

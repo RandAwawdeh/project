@@ -1,0 +1,46 @@
+.signup-card{
+  flex: 1;
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 500px;
+  max-height: 700px;
+  border-radius: 21px;
+  background: #e6e6e6;
+  box-shadow:  5px 5px 9px #dddddd,
+               -5px -5px 9px #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 1rem;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+h2{
+  color: #303538;
+}
+mat-form-field{
+  width: 45%;
+}
+
+button{
+  width: 90%;
+}
+a{
+  font-size: small;
+  margin-top: 10px;
+}

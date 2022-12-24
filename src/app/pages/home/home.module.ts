@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { Router, RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
-
+const MatImports = [MatToolbarModule,MatCardModule,MatButtonModule]
 
 
 @NgModule({
@@ -12,12 +14,10 @@ import { Router, RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      {
-        path: 'home',
-        component: HomeComponent
-      }
-    ])
+
+    ...MatImports
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+
+}

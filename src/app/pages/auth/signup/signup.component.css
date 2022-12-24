@@ -1,36 +1,53 @@
 .main{
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  background-color: #ededed;
+  gap: 40px;
+  padding: 50px;
+  background-color: #e6e6e6;
 }
-.login-card{
+.signup-card{
+  flex: 1;
+  max-width: 600px;
   min-width: 400px;
-  max-width: 900px;
-  min-height: 400px;
-  box-shadow: 5px 10px 12px #888888;
-  background-color: #ededed;
+  min-height: 500px;
+  max-height: 700px;
+  border-radius: 21px;
+  background: #e6e6e6;
+  box-shadow:  5px 5px 9px #dddddd,
+               -5px -5px 9px #efefef;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  border-radius: 5px;
+  gap: 2px;
+  padding: 1rem;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+h2{
+  color: #303538;
+}
+mat-form-field{
+  width: 45%;
 }
 
-h3{
-  text-align: center;
-  font-size: 1.8;
-  font-weight: 400;
-}
-.field-width{
-  width: 90%;
-}
-input{
-  margin-top: 12px;
-  margin-bottom: 5px;
-}
 button{
   width: 90%;
 }
@@ -38,4 +55,3 @@ a{
   font-size: small;
   margin-top: 10px;
 }
-
