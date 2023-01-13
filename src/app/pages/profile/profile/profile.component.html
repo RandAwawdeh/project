@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">{{userdata.logo}}</div>
+    <mat-card-title>{{userdata.name}}</mat-card-title>
+    <mat-card-subtitle>{{userdata.age}} {{userdata.type}}</mat-card-subtitle>
+    <mat-card-actions>
+      <button mat-button (click)="openDialog(userdata)">edit</button>
+    </mat-card-actions>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{userdata.jobDesc}}
+
+      {{userdata.courses}}
+
+      {{userdata.skills}}
+      {{userdata.availableTime}}
+
+      {{userdata.city}}
+    </p>
+    <p class="link">{{userdata.website}}</p>
+    <P class="contact">{{userdata.email}} | {{userdata.phone}}</P>
+  </mat-card-content>
+</mat-card>

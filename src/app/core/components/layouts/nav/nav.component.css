@@ -45,7 +45,9 @@ mat-list-item mat-icon{
     /* display: flex; */
 }
 
-
+mat-sidenav-container{
+  background-color: #e9e9e9;
+}
 
 
 

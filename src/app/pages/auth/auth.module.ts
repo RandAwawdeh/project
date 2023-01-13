@@ -11,6 +11,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TSignupComponent } from './TSignup/t-signup/t-signup.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 const MatImports = [
@@ -18,11 +19,14 @@ const MatImports = [
   MatInputModule,
   MatButtonModule,
   MatRadioModule,
-  MatGridListModule
+  MatGridListModule,
+  MatTabsModule
 ]
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, TSignupComponent],
-  imports: [CommonModule, AuthRoutingModule,FormsModule,ReactiveFormsModule, ...MatImports]
+  imports: [CommonModule, AuthRoutingModule,FormsModule,ReactiveFormsModule, ...MatImports],
+  entryComponents:[SignupComponent],
+  exports:[SignupComponent]
 })
 export class AuthModule { }

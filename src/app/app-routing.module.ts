@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UpdateDialogComponent } from './core/components/update-dialog/updat-dialog/update-dialog.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotAuthGuard } from './core/guards/not-auth.guard';
+import { EventComponent } from './pages/events/events/event.component';
 import { HomeComponent } from './pages/home/home/home.component';
+import { NgoComponent } from './pages/ngoList/ngo/ngo/ngo.component';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
+import { TechnicalsListComponent } from './pages/TechnicalsList/technicals-list/technicals-list.component';
+
 const routes: Routes = [
   {
     path:'',
-    redirectTo: 'home',
+    redirectTo: 'profile',
     pathMatch: 'full',
   },
   {
     path:'auth',
     loadChildren: ()=> import('./pages/auth/auth.module').then((m)=>m.AuthModule), //lazy loading
     canLoad: [NotAuthGuard]
+  },
+  {
+    path:'update-profile',
+    component:UpdateDialogComponent
   },
   {
     path:'home',
@@ -26,12 +35,22 @@ const routes: Routes = [
     path:'profile',
     loadChildren: ()=> import('./pages/profile/profile.module').then((m)=>m.ProfileModule),
     component: ProfileComponent,
+    canLoad: [AuthGuard]
+
   },
   {
-    path:'dashboard',
-    loadChildren: ()=> import('./pages/dashboard/dashboard.module').then((m)=>m.DashboardModule), //lazy loading
+    path:'events',
+    loadChildren: ()=> import('./pages/events/events.module').then((m)=>m.EventsModule),
 
-    canLoad: [AuthGuard]
+  },
+
+  {
+    path:'technecals',
+    component:TechnicalsListComponent,
+  },
+  {
+    path:'ngo',
+    component:NgoComponent,
   },
   {
     path: '**', //white card

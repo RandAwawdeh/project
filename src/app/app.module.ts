@@ -12,12 +12,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 import { environment } from 'src/environments/environment';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddEventComponent } from './pages/add-event/add-event.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule} from '@angular/forms';
+import { UpdateDialogModule } from './core/components/update-dialog/update-dialog.module';
+import { TechModule } from './pages/TechnicalsList/tech.module';
+import { NgoComponent } from './pages/ngoList/ngo/ngo/ngo.component';
+import { NgoModule } from './pages/ngoList/ngo/ngo.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ProfileComponent,
-        EventComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -26,10 +33,17 @@ import { environment } from 'src/environments/environment';
         AppRoutingModule,
         BrowserAnimationsModule,
         LayoutModule,
+        UpdateDialogModule,
         LayoutsModule,
         HttpClientModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        TechModule,
+        NgoModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class AppModule { }

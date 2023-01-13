@@ -1,0 +1,40 @@
+<form>
+
+  <div class="input">
+    <input matInput placeholder="name" id="name" name="name" formControlName="name">
+    <!-- <label for="name" *ngIf="formGroup.get('name')?.invalid">{{getErrorMessage(formGroup.get("name"))}}</label> -->
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="description" formControlName="purpose">
+    <!-- <label for="description" *ngIf="formGroup.get('description')?.invalid">{{getErrorMessage(formGroup.get("description"))}}</label> -->
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="skills" formControlName="skills">
+    <!-- <label *ngIf="formGroup.get('skills')?.invalid">{{getErrorMessage(formGroup.get("skills"))}}</label> -->
+  </div>
+
+
+  <div class="input">
+
+  <input matInput placeholder="startdate" formControlName="startdate">
+  <!-- <label *ngIf="formGroup.get('startdate')?.invalid">{{getErrorMessage(formGroup.get("startdate"))}}</label> -->
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="enddate" formControlName="enddate">
+    <!-- <label *ngIf="formGroup.get('enddate')?.invalid">{{getErrorMessage(formGroup.get("enddate"))}}</label> -->
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="num of technologists" formControlName="volunteerIn">
+    <label>What can you volunteer in?</label>
+  </div>
+
+  <div class="actions">
+    <button (click)="onRequestClicked()">request</button>
+  </div>
+
+</form>
+

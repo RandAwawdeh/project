@@ -1,52 +1,68 @@
 <div class="main">
-  <div class="signup-card">
-    <h2>Signup as Company</h2>
-    <form [formGroup]="formGroup">
-      <div class="row">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label> Signup as Company </ng-template>
+      <div class="signup-card">
+        <h2>Signup as Company</h2>
+        <form [formGroup]="formGroup">
+          <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>Company Name</mat-label>
+              <input matInput type="text" formControlName="name" />
+              <mat-error *ngIf="name.invalid">user name required</mat-error>
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Company Name</mat-label>
-          <input matInput type="text" formControlName="name">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email" />
+              <mat-error *ngIf="email.invalid">{{
+                getEmailErrorMessage()
+              }}</mat-error>
+            </mat-form-field>
 
-        <mat-form-field appearance="outline" >
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input matInput type="number" formControlName="phone" />
+              <mat-error *ngIf="phone.invalid">user phone required</mat-error>
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Phone Number</mat-label>
-          <input matInput type="number" formControlName="phone">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Logo</mat-label>
+              <input matInput type="url" formControlName="logo" />
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Logo</mat-label>
-          <input matInput type="url" formControlName="logo">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Website</mat-label>
+              <input matInput type="url" formControlName="website" />
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Website</mat-label>
-          <input matInput type="url" formControlName="website">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" />
+              <mat-error *ngIf="password.invalid">{{
+                getPasswordErrorMessage()
+              }}</mat-error>
+            </mat-form-field>
+          </div>
 
-        <mat-form-field appearance="outline" >
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password">
-        </mat-form-field>
-        </div>
+          <mat-radio-group aria-label="Select an option" formControlName="type">
+            <mat-radio-button value="NGO">NGO</mat-radio-button>
+            <mat-radio-button value="Goverment">Goverment</mat-radio-button>
+            <mat-radio-button value="Religious">Religious</mat-radio-button>
+          </mat-radio-group>
+        </form>
 
-        <mat-radio-group aria-label="Select an option" formControlName="type">
-          <mat-radio-button value="NGO">NGO</mat-radio-button>
-          <mat-radio-button value="Goverment">Goverment</mat-radio-button>
-          <mat-radio-button value="Religious">Religious</mat-radio-button>
-        </mat-radio-group>
-    </form>
+        <button mat-raised-button color="primary" (click)="onSignupClicked()">
+          Signup
+        </button>
 
-    <button mat-raised-button color="primary"  (click)="onSignupClicked()">Signup</button>
+        <a [routerLink]="['/auth/login']">login</a>
+      </div>
+    </mat-tab>
 
-    <a [routerLink]="['/auth/login']">login</a>
-  </div>
-
-  <app-t-signup></app-t-signup>
-
+    <mat-tab>
+      <ng-template mat-tab-label> Signup as Technical </ng-template>
+      <app-t-signup></app-t-signup>
+    </mat-tab>
+  </mat-tab-group>
 </div>
