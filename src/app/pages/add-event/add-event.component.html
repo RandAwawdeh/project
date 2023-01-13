@@ -1,0 +1,45 @@
+<form [formGroup]="formGroup">
+
+  <div class="input">
+    <input matInput placeholder="name" id="name" name="name" formControlName="name">
+    <label for="name" *ngIf="formGroup.get('name')?.invalid">{{getErrorMessage(formGroup.get("name"))}}</label>
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="description" formControlName="description">
+    <label for="description" *ngIf="formGroup.get('description')?.invalid">{{getErrorMessage(formGroup.get("description"))}}</label>
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="skills" formControlName="skills">
+    <label *ngIf="formGroup.get('skills')?.invalid">{{getErrorMessage(formGroup.get("skills"))}}</label>
+  </div>
+
+
+  <div class="input">
+
+  <input matInput placeholder="startdate" formControlName="startdate">
+  <label *ngIf="formGroup.get('startdate')?.invalid">{{getErrorMessage(formGroup.get("startdate"))}}</label>
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="enddate" formControlName="enddate">
+    <label *ngIf="formGroup.get('enddate')?.invalid">{{getErrorMessage(formGroup.get("enddate"))}}</label>
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="num of technologists" formControlName="numOfTechnologists">
+    <label *ngIf="formGroup.get('numOfTechnologists')?.invalid">{{getErrorMessage(formGroup.get("numOfTechnologists"))}}</label>
+  </div>
+
+  <div class="input">
+    <input matInput placeholder="attachment" formControlName="attachment">
+    <label *ngIf="formGroup.get('attachment')?.invalid">{{getErrorMessage(formGroup.get("attachment"))}}</label>
+
+  </div>
+  <div class="actions">
+    <button (click)="onAddClicked()">add</button>
+    <button>cancel</button>
+  </div>
+
+</form>

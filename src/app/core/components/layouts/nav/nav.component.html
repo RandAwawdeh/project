@@ -1,32 +1,39 @@
-
 <mat-toolbar>
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon>
-
-    </button>
-    <div>
-        <button mat-icon-button (click)="onLoggedoutClicked()">Logout</button>
-    </div>
-
+  <button mat-icon-button (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div>
+    <button mat-icon-button (click)="onLoggedoutClicked()">Logout</button>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #snav style="justify-content: space-between; display: flex;">
+  <mat-sidenav #snav style="justify-content: space-between; display: flex">
+    <!-- <div *ngFor="let item of navServiceList.children" class="first"> -->
+    <!-- <a [routerLink]="[item.route]" (click)="onItemClicked()"> -->
+    <div *ngIf="!loading">
+      <div *ngFor="let item of navServiceList.children">
+        <mat-list-item   *ngIf="item.isUser === userInfo.isUser || item.isUser === null">
+          <a
+            [routerLink]="[item.route]"
+            (click)="onItemClicked()"
 
-        <!-- <div *ngFor="let item of navServiceList.children" class="first"> -->
-            <!-- <a [routerLink]="[item.route]" (click)="onItemClicked()"> -->
-                <mat-list-item *ngFor="let item of navServiceList.children">
-                    <a [routerLink]="[item.route]" (click)="onItemClicked()"><mat-icon mat-icon-button >{{item.icon}}</mat-icon></a>
-                <!-- <div matListItemTitle class="item-text">{{ item.displayName }}</div> -->
-                </mat-list-item>
-            <!-- </a> -->
+            ><mat-icon mat-icon-button>{{ item.icon }}</mat-icon></a
+          >
+          <!-- <div matListItemTitle class="item-text">{{ item.displayName }}</div> -->
+        </mat-list-item>
+      </div>
 
-        <!-- </div> -->
-    </mat-sidenav>
+    </div>
 
-    <mat-sidenav-content>
+    <!-- </a> -->
+
+    <!-- </div> -->
+  </mat-sidenav>
+
+  <mat-sidenav-content>
     <main>
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </main>
-    </mat-sidenav-content>
-
+  </mat-sidenav-content>
 </mat-sidenav-container>
