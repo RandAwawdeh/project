@@ -41,15 +41,4 @@ color: rgba(1, 18, 49, 0.71);
   color: white;
 }
 
-.mdc-text-field__input:focus{
-  /* outline: none; */
-  outline: #ff8c00  !important;
-  border-color: #ff8c00;
-}
-:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-  color: green;
-}
-:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color:green;
-}
 

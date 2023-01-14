@@ -64,7 +64,7 @@ const routes: Routes = [
   },
   {
     path: '**', //white card
-    redirectTo: 'auth',
+    redirectTo: 'events',
     pathMatch: 'full',
   }
 ];
