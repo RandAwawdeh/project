@@ -1,40 +1,30 @@
 <form [formGroup]="formGroup">
   <div class="row">
-    <mat-form-field appearance="outline">
-      <mat-label>Company Name</mat-label>
-      <input matInput type="text"  formControlName="name" />
-    </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" formControlName="email" />
-    </mat-form-field>
+      <input matInput type="text"  formControlName="name" placeholder="name" />
 
-    <mat-form-field appearance="outline">
-      <mat-label>Phone Number</mat-label>
-      <input matInput type="number" formControlName="phone" />
-    </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Website</mat-label>
-      <input matInput type="url" formControlName="website" />
-    </mat-form-field>
+      <input matInput type="email" formControlName="email" placeholder="email" />
 
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" formControlName="password" />
-    </mat-form-field>
+
+      <input matInput type="number" formControlName="phone" placeholder="phone"/>
+
+      <input matInput type="url" formControlName="website" placeholder="website"/>
+
+      <input matInput type="password" formControlName="password" placeholder="password"/>
+      <mat-radio-group aria-label="Select an option" formControlName="type">
+        <mat-radio-button value="NGO">NGO</mat-radio-button>
+        <mat-radio-button value="Goverment">Goverment</mat-radio-button>
+        <mat-radio-button value="Religious">Religious</mat-radio-button>
+      </mat-radio-group>
   </div>
 
-  <mat-radio-group aria-label="Select an option" formControlName="type">
-    <mat-radio-button value="NGO">NGO</mat-radio-button>
-    <mat-radio-button value="Goverment">Goverment</mat-radio-button>
-    <mat-radio-button value="Religious">Religious</mat-radio-button>
-  </mat-radio-group>
+
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="onUpdateClicked()">
+      update
+    </button>
+  </div>
+
 </form>
-
-<button mat-raised-button color="primary" (click)="onUpdateClicked()">
-  update
-</button>
-
-

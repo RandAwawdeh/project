@@ -37,14 +37,6 @@ export class UpdateDialogComponent implements OnInit{
       type: '',
       website:'',
       logo:null,
-      password: [
-        null,
-        [
-          Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{10,}$'
-          ),
-        ],
-      ],
     })
   }
   ngOnInit(): void {
@@ -70,7 +62,6 @@ export class UpdateDialogComponent implements OnInit{
       type: result['type'],
       website:result['website'],
       logo: result['logo'],
-      password:[result['password'],[Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{10,}$')]],
     })
     })
   }
@@ -104,7 +95,7 @@ export class UpdateDialogComponent implements OnInit{
       email: this.formGroup.controls['email'].value,
       phone: this.formGroup.controls['phone'].value,
       age: this.formGroup.controls['age'].value,
-      city:this.formGroup.controls['enddate'].value,
+      city:this.formGroup.controls['city'].value,
       skills: this.formGroup.controls['skills'].value,
       jobDesc: this.formGroup.controls['jobDesc'].value,
       availableTime: this.formGroup.controls['availableTime'].value,
@@ -112,7 +103,6 @@ export class UpdateDialogComponent implements OnInit{
       type: this.formGroup.controls['type'].value,
       website: this.formGroup.controls['website'].value,
       logo: this.formGroup.controls['logo'].value,
-      password: this.formGroup.controls['password'].value,
 
     }).then(()=>{
       window.alert('update sucssesfull');

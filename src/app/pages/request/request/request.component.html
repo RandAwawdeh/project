@@ -1,35 +1,33 @@
-<form>
+<form [formGroup]="formGroup">
 
   <div class="input">
     <input matInput placeholder="name" id="name" name="name" formControlName="name">
-    <!-- <label for="name" *ngIf="formGroup.get('name')?.invalid">{{getErrorMessage(formGroup.get("name"))}}</label> -->
+    <label>name</label>
   </div>
 
   <div class="input">
     <input matInput placeholder="description" formControlName="purpose">
-    <!-- <label for="description" *ngIf="formGroup.get('description')?.invalid">{{getErrorMessage(formGroup.get("description"))}}</label> -->
+    <label>purpose</label>
   </div>
 
   <div class="input">
     <input matInput placeholder="skills" formControlName="skills">
-    <!-- <label *ngIf="formGroup.get('skills')?.invalid">{{getErrorMessage(formGroup.get("skills"))}}</label> -->
+    <label>skills</label>
   </div>
 
 
   <div class="input">
 
   <input matInput placeholder="startdate" formControlName="startdate">
-  <!-- <label *ngIf="formGroup.get('startdate')?.invalid">{{getErrorMessage(formGroup.get("startdate"))}}</label> -->
-  </div>
+<label>start date</label>  </div>
 
   <div class="input">
     <input matInput placeholder="enddate" formControlName="enddate">
-    <!-- <label *ngIf="formGroup.get('enddate')?.invalid">{{getErrorMessage(formGroup.get("enddate"))}}</label> -->
-  </div>
+<label >end date</label>  </div>
 
   <div class="input">
     <input matInput placeholder="num of technologists" formControlName="volunteerIn">
-    <label>What can you volunteer in?</label>
+    <label>volnteer work type</label>
   </div>
 
   <div class="actions">
