@@ -1,11 +1,11 @@
-<mat-toolbar>
-  <button mat-icon-button (click)="snav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div>
-    <button mat-icon-button (click)="onLoggedoutClicked()">Logout</button>
-  </div>
-</mat-toolbar>
+  <mat-toolbar>
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+      <button mat-icon-button (click)="onLoggedoutClicked()">Logout</button>
+    </div>
+  </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav #snav style="justify-content: space-between; display: flex">
@@ -32,6 +32,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
+
     <main>
       <router-outlet></router-outlet>
     </main>
