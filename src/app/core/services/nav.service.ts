@@ -11,7 +11,9 @@ export class NavService {
   getNavMenu() {
     return new NavMenuDto('navMenu', [
       new NavItemDto('profile', 'account_circle', '/profile', null),
-      new NavItemDto('approve', 'notifications', '/Approve',null),
+      new NavItemDto('approve', 'notifications', '/approve',false),
+      new NavItemDto('request', 'notifications', '/request',true),
+
       new NavItemDto('events', 'local_activity', '/events', null),
       new NavItemDto('technecals', 'dashboard', '/technecals',false),
       new NavItemDto('ngo', 'dashboard', '/ngo',true),

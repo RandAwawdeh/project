@@ -21,6 +21,9 @@ import { UpdateDialogModule } from './core/components/update-dialog/update-dialo
 import { TechModule } from './pages/TechnicalsList/tech.module';
 import { NgoComponent } from './pages/ngoList/ngo/ngo/ngo.component';
 import { NgoModule } from './pages/ngoList/ngo/ngo.module';
+import { ApproveComponent } from './pages/approve/approve/approve.component';
+import { ApproveModule } from './pages/approve/approve/approve.module';
+import { RequestModule } from './pages/request/request/request.module';
 
 @NgModule({
     declarations: [
@@ -43,6 +46,8 @@ import { NgoModule } from './pages/ngoList/ngo/ngo.module';
         TechModule,
         NgoModule,
         FormsModule,
+        ApproveModule,
+        RequestModule,
         ReactiveFormsModule
     ]
 })

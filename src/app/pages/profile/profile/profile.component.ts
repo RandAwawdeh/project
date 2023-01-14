@@ -34,11 +34,11 @@ export class ProfileComponent implements OnInit{
   }
   openDialog(userdata: IUser){
     this.router.navigate(['./update-profile'],{queryParams:{key:userdata.UID}})
-    const dialogRef = this.dialog.open(UpdateDialogComponent,
-      {
-      height:'500px',
-      }
-    );
+    // const dialogRef = this.dialog.open(UpdateDialogComponent,
+    //   {
+    //   height:'500px',
+    //   }
+    // );
   }
 
 

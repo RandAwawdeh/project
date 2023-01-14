@@ -31,7 +31,6 @@ const MatImports = [
   MatTableModule,
   MatPaginatorModule,
   MatFormFieldModule,
-  MatInputModule,
   FormsModule,
   MatSelectModule,
   MatRadioModule,

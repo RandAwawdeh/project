@@ -101,7 +101,7 @@ export class AuthService {
       );
   }
   getAllTechnialsUsers(): Observable<any> {
-    return this.angularFireDatabase.list<IUser>(this.dpUserPath,ref => ref.orderByChild('isUser').equalTo('true'))
+    return this.angularFireDatabase.list<IUser>(this.dpUserPath,ref => ref.orderByChild('isUser').equalTo(true))
       .snapshotChanges()
       .pipe(
         map((changes) =>

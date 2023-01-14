@@ -27,4 +27,14 @@ table{
 .col{
   flex: 1;
 }
+.align-end{
+  text-align: end;
+}
+.align-end button {
+  background-color: rgb(1, 4, 29);
+  color: white;
+}
+.btn-action{
+  margin-inline-start: 10px;
+}
 

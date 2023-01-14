@@ -7,4 +7,8 @@ export interface event{
   enddate?: string ;
   numOfTechnologists?: number | null;
   attachment?: any;
+  purpose?:string;
+  volunteerIn?: string;
+  UID?: string;
+
 }

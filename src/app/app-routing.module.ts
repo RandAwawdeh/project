@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { UpdateDialogComponent } from './core/components/update-dialog/updat-dialog/update-dialog.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotAuthGuard } from './core/guards/not-auth.guard';
+import { ApproveComponent } from './pages/approve/approve/approve.component';
 import { EventComponent } from './pages/events/events/event.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { NgoComponent } from './pages/ngoList/ngo/ngo/ngo.component';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
+import { RequestComponent } from './pages/request/request/request.component';
 import { TechnicalsListComponent } from './pages/TechnicalsList/technicals-list/technicals-list.component';
 
 const routes: Routes = [
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path:'ngo',
     component:NgoComponent,
+  },
+  {
+    path:'approve',
+    component:ApproveComponent,
+  },
+  {
+    path:'request',
+    component:RequestComponent,
   },
   {
     path: '**', //white card
