@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { IUser } from 'src/app/core/interfaces/user.interface';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { UploadService } from 'src/app/core/services/upload.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,10 +18,13 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class SignupComponent implements OnInit {
   formGroup: FormGroup;
+  imgSrc: any;
+
   constructor(
     private router: Router,
     private _authService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private _uploadService: UploadService
   ) {
     this.formGroup = this.formBuilder.group({
       name: [null, Validators.required],
@@ -46,28 +50,54 @@ export class SignupComponent implements OnInit {
     if (this.formGroup.invalid) {
       this.validateFormGroup();
     } else {
-      this._authService
-        .signup(this.email.value, this.password.value)
-        .pipe(
-          switchMap((user: any) => {
-            const obj: IUser = {
-              UID: user.user.uid,
-              email: this.email.value,
-              name: this.name.value,
-              phone: this.phone.value,
-              type: this.type.value,
-              website: this.website.value,
-              logo: this.logo.value,
-              isUser:false
-            };
-            return this._authService.createUser(obj);
-          })
-        )
-        .subscribe((result) => {
-          this.router.navigate(['/dashboard']);
-        });
+      if(this.formGroup.controls['logo'].value){
+        this.upload();
+      }else{
+        this.createUser();
+      }
     }
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/events']);
+  }
+
+  upload() {
+    this._uploadService
+      .upload(this.formGroup.controls['logo'].value)
+      .subscribe((file) => {
+        if (file?.metadata) {
+          this.getDownloadURL();
+        }
+      });
+  }
+
+  getDownloadURL() {
+    this._uploadService.getDownloadURL().subscribe((url) => {
+      console.log();
+      this.formGroup.controls['logo'].setValue(url);
+       this.createUser()
+    });
+  }
+
+  createUser() {
+    this._authService
+    .signup(this.email.value, this.password.value)
+    .pipe(
+      switchMap((user: any) => {
+        const obj: IUser = {
+          UID: user.user.uid,
+          email: this.email.value,
+          name: this.name.value,
+          phone: this.phone.value,
+          type: this.type.value,
+          website: this.website.value,
+          logo: this.logo.value,
+          isUser:false
+        };
+        return this._authService.createUser(obj);
+      })
+    )
+    .subscribe((result) => {
+      this.router.navigate(['/events']);
+    });
   }
 
   validateFormGroup() {
@@ -89,6 +119,14 @@ export class SignupComponent implements OnInit {
       return 'You must enter a value';
     }
     return 'not a valid password';
+  }
+  onFileInputChange($event:any){
+    console.log($event)
+    this.formGroup.controls['logo'].setValue($event.target.file[0]);
+
+    const reader = new FileReader();
+    reader.onload =(e)=>(this.imgSrc=reader.result);
+    reader.readAsDataURL(this.formGroup.controls['logo'].value)
   }
 
   get name() {

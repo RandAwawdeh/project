@@ -3,8 +3,7 @@ mat-toolbar{
   background-color: #06090e;
   color: #F9F7F7;
   justify-content: space-between;
-
-
+  height: 50px;
 }
 
 mat-toolbar button{
@@ -14,7 +13,7 @@ justify-content: center;
 align-items: center;
 }
 mat-toolbar div{
-width: 160px;
+width: 150px;
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -23,10 +22,8 @@ mat-toolbar div button{
   width: 80px;
   font-size: small;
 }
-
 mat-sidenav{
     width: 50px;
-    min-height: calc(100vh-50px);
     background-color: #06090e;
     box-shadow:  -1px 1px 2.5px hsl(218, 40%, 2.8%),  1px 0px 2.5px hsl(218, 40%, 5.2%),  inset 2px -2px 8px hsl(218, 40%, 2.8%),  inset -2px 2px 8px hsl(218, 40%, 5.2%);    border: none;
 }
@@ -43,7 +40,7 @@ mat-list-item mat-icon{
 }
 
 mat-sidenav-container{
-  min-height: 100vh;
+  min-height: calc(100% - 50px);
   width: 100%;
   padding-right: 3%;
   background-color: #ebecf0;

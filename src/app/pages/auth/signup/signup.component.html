@@ -5,6 +5,12 @@
       <div class="signup-card">
         <form [formGroup]="formGroup">
           <div class="row">
+            <div class="col">
+              <label for="file" class="logo">logo</label>
+              <input id="file" type="file" (change)="onFileInputChange($event)" accept="image/" formControlName="logo" >
+              <img [src]="imgSrc" alt=""
+                *ngIf="formGroup.controls['logo'].value">
+            </div>
             <mat-form-field appearance="outline">
               <mat-label>Company Name</mat-label>
               <input matInput type="text" formControlName="name" />
@@ -23,11 +29,6 @@
               <mat-label>Phone Number</mat-label>
               <input matInput type="number" formControlName="phone" />
               <mat-error *ngIf="phone.invalid">user phone required</mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Logo</mat-label>
-              <input matInput type="url" formControlName="logo" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">

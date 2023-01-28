@@ -5,6 +5,14 @@ form{
   background-color: #e9e9e9;
   box-shadow:  0.3906px 2.79px 6.975px hsl(0, 0%, 66.339%),  -0.3906px -1.79px 6.975px hsl(0, 0%, 115.661%),  inset -0.126px -0.9px 3.6px hsl(0, 0%, 66.339%),  inset 0.126px 0.9px 3.6px hsl(0, 0%, 115.661%);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.row{
+width: 100%;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,9 +20,8 @@ form{
   gap: 20px;
 }
 input{
+  min-width: 30%;
   height: 50px;
-  width: 100%;
-  max-width: 400px;
   border-radius: 15px;
   box-shadow: inset 2px 2px 5px #babecc,
               inset -5px -5px 10px #ffffff;
@@ -26,7 +33,7 @@ input{
 button,input{
   border: 0;
   outline: 0;
-  font-size: 14px;
+  font-size: 12px;
   padding: 16px;
   background-color: #ebecf0;
 }
@@ -34,6 +41,8 @@ input:focus{
   box-shadow: inset 3px 3px 6px #babecc,
               inset -5px -5px 10px #ffffff;}
 button{
+  width: 30%;
+  min-width: 100px;
   color: #424c71;
   font-weight: bold;
   box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
@@ -49,22 +58,7 @@ button:active{
   box-shadow: inset 2px 2px 3px #babecc,
   inset -4px -4px 7px rgb(245, 245, 245);
 }
-.input{
-  width: 30%;
-  max-width: 400px;
-  height: 60px;
-  position: relative;
 
-}
-label{
-  font-size: 10px;
-  color: rgb(240, 124, 36);
-  position: absolute ;
-  margin-left: -95%;
-  margin-top: 50px;
-
-  z-index: 3;
-}
 .actions{
   width: 70%;
   display: flex;
