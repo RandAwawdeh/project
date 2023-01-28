@@ -14,6 +14,7 @@ import { UsersService } from '../../../services/users.service';
 export class UpdateDialogComponent implements OnInit{
   key:string='';
   formGroup!: FormGroup;
+  imgSrc: any;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -48,7 +49,7 @@ export class UpdateDialogComponent implements OnInit{
     })
   }
   getById(){
-    this._authService.getById(this.key).subscribe((result:any)=>{
+    this._usersService.getById(this.key).subscribe((result:any)=>{
     this.formGroup = this.formBuilder.group({
       name: result['name'],
       email: result['email'],
@@ -63,31 +64,35 @@ export class UpdateDialogComponent implements OnInit{
       website:result['website'],
       logo: result['logo'],
     })
+    this.imgSrc=result['logo']
     })
   }
   onUpdateClicked(){
     if (this.formGroup.invalid) {
       this.validateFormGroup();
     } else{
-      this. updateProfile();
-
+      if(this.formGroup.controls['logo'].value){
+        this.upload();
+      }else{
+        this. updateProfile();
+      }
     }
   }
-  // upload(){
-  //   this._uploadService
-  //   .upload(this.formGroup.controls['logo'].value)
-  //   .subscribe((file)=>{
-  //     if(file?.metadata){
-  //       this.getDownloadURL();
-  //     }
-  //   });
-  // }
-  // getDownloadURL(){
-  //   this._uploadService.getDownloadURL().subscribe((url)=>{
-  //     this.formGroup.controls['logo'].setValue(url);
-  //     this.updateProfile()
-  //   })
-  // }
+  upload(){
+    this._uploadService
+    .upload(this.formGroup.controls['logo'].value)
+    .subscribe((file)=>{
+      if(file?.metadata){
+        this.getDownloadURL();
+      }
+    });
+  }
+  getDownloadURL(){
+    this._uploadService.getDownloadURL().subscribe((url)=>{
+      this.formGroup.controls['logo'].setValue(url);
+      this.updateProfile()
+    })
+  }
 
   updateProfile(){
     this._usersService.update(this.key,{
@@ -109,13 +114,13 @@ export class UpdateDialogComponent implements OnInit{
       this.location.back();
     });
   }
-  // onFileInputChange($event: any) {
-  //   console.log($event);
-  //   this.formGroup.controls['logo'].setValue($event.target.files[0]);
+  onFileInputChange($event: any) {
+    console.log($event);
+    this.formGroup.controls['logo'].setValue($event.target.files[0]);
 
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(this.formGroup.controls['logo'].value);
-  // }
+    const reader = new FileReader();
+    reader.readAsDataURL(this.formGroup.controls['logo'].value);
+  }
 
   validateFormGroup(){
     Object.keys(this.formGroup.controls).forEach((filed)=>{

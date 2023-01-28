@@ -8,7 +8,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
   providedIn: 'root'
 })
 export class UsersService {
-  dbPath = '/profile';
+  dbPath = '/users';
   dbRef: AngularFireList<IUser>;
 
   constructor(private angularFireDatabase: AngularFireDatabase) {

@@ -1,38 +1,19 @@
 <form [formGroup]="formGroup">
-
-  <div class="input">
+  <div class="row">
     <input matInput placeholder="name" id="name" name="name" formControlName="name">
-    <label>name</label>
-  </div>
 
-  <div class="input">
     <input matInput placeholder="description" formControlName="purpose">
-    <label>purpose</label>
-  </div>
 
-  <div class="input">
     <input matInput placeholder="skills" formControlName="skills">
-    <label>skills</label>
-  </div>
 
+    <input matInput placeholder="startdate" formControlName="startdate">
 
-  <div class="input">
-
-  <input matInput placeholder="startdate" formControlName="startdate">
-<label>start date</label>  </div>
-
-  <div class="input">
     <input matInput placeholder="enddate" formControlName="enddate">
-<label >end date</label>  </div>
 
-  <div class="input">
-    <input matInput placeholder="num of technologists" formControlName="volunteerIn">
-    <label>volnteer work type</label>
+    <input matInput placeholder="volunteer work type" formControlName="volunteerIn">
   </div>
 
-  <div class="actions">
-    <button (click)="onRequestClicked()">request</button>
-  </div>
+  <button (click)="onRequestClicked()">request</button>
 
 </form>
 

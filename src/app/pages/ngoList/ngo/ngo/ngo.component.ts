@@ -16,12 +16,11 @@ export class NgoComponent implements OnInit{
   dataSource= new MatTableDataSource<IUser>([])
 
   displayedColumns :string[]=['name','email','phone','type','logo','website']
-  city:string[]=['','All','Amman','Zarqa','Irbid','Aqaba','Mafraq','Madaba','As-Salt','Jerash','Maan','Karak','Tafilah','Fuheis','Ajloun']
-skills:string[]=['','Teamplayer','Relationship building','Customer service','web development','Problem solving']
-defaultValue = "All";
-filterDictionary= new Map<string,string>()
-usersFilters: UsersFilter[]=[];
-dataSourceFilters = new MatTableDataSource<IUser>([])
+  type:string[]=['NGO','Goverment','Religious']
+  defaultValue = "All";
+  filterDictionary= new Map<string,string>()
+  usersFilters: UsersFilter[]=[];
+  dataSourceFilters = new MatTableDataSource<IUser>([])
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,9 +33,7 @@ dataSourceFilters = new MatTableDataSource<IUser>([])
 
     this.getAllData()
     this.dataSource.sort = this.sort;
-
-    this.usersFilters.push({name:'city',options:this.city,defaultValue:this.defaultValue});
-    this.usersFilters.push({name:'skills',options:this.skills,defaultValue:this.defaultValue});
+    this.usersFilters.push({name:'type',options:this.type,defaultValue:this.defaultValue});
 
 
   }
@@ -57,7 +54,6 @@ getAllData(){
     return isMatch;
   }
   this.dataSource._updateChangeSubscription()
-
 })
   }
 

@@ -7,7 +7,7 @@ import { finalize } from 'rxjs';
 })
 export class UploadService {
 
-  dbpath='/files';
+  dbpath='/logos';
   storageRef: AngularFireStorageReference;
   fileUrl:string='';
 
@@ -20,7 +20,7 @@ export class UploadService {
     this.storageRef = this.storage.ref(filePath)
     return this.storage.upload(filePath,file).snapshotChanges()
 
-    // this.stoarge.upload(this.dbpath,file).snapshotChanges().pipe(
+    // this.storage.upload(this.dbpath,file).snapshotChanges().pipe(
     //   finalize(()=>{
     //     this.storageRef.getDownloadURL().subscribe((url)=>{
     //       this.fileUrl = url;

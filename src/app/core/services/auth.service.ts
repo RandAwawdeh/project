@@ -73,6 +73,7 @@ export class AuthService {
       .object(`${this.dpUserPath}/${key}`)
       .valueChanges();
   }
+
   createUser(user: IUser): Observable<any> {
     const userObjFDB = this.angularFireDatabase.list(this.dpUserPath);
 
@@ -92,7 +93,7 @@ export class AuthService {
 
 
   getAllNgoUsers(): Observable<any> {
-    return this.angularFireDatabase.list<IUser>(this.dpUserPath,ref => ref.orderByChild('isUser').equalTo('false'))
+    return this.angularFireDatabase.list<IUser>(this.dpUserPath,ref => ref.orderByChild('isUser').equalTo(false))
       .snapshotChanges()
       .pipe(
         map((changes) =>

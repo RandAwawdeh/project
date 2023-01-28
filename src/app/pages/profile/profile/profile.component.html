@@ -1,24 +1,25 @@
-<mat-card>
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image">{{userdata.logo}}</div>
-    <mat-card-title>{{userdata.name}}</mat-card-title>
-    <mat-card-subtitle>{{userdata.age}} {{userdata.type}}</mat-card-subtitle>
-    <mat-card-actions>
-      <button mat-button (click)="openDialog(userdata)">edit</button>
-    </mat-card-actions>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{userdata.jobDesc}}
+<div class="main">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar *ngIf="userdata.isUser==false">
+        <img [src]="userdata.logo">
+      </div>
+      <mat-card-title>{{userdata.name}}</mat-card-title>
+      <mat-card-subtitle>{{userdata.age}} {{userdata.type}}</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-button (click)="openDialog(userdata)">edit</button>
+      </mat-card-actions>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{userdata.jobDesc}}</p>
+      <p *ngIf="userdata.isUser==true">Skills:{{userdata.skills}}</p>
+      <p *ngIf="userdata.isUser==true">Courses:{{userdata.courses}}</p>
+      <p *ngIf="userdata.isUser==true">Available Time: {{userdata.availableTime}}
+      </p>
+      <p *ngIf="userdata.isUser==true">Location: {{userdata.city}}</p>
 
-      {{userdata.courses}}
-
-      {{userdata.skills}}
-      {{userdata.availableTime}}
-
-      {{userdata.city}}
-    </p>
-    <p class="link">{{userdata.website}}</p>
-    <P class="contact">{{userdata.email}} | {{userdata.phone}}</P>
-  </mat-card-content>
-</mat-card>
+      <p class="link">{{userdata.website}}</p>
+      <P class="contact">{{userdata.email}} | {{userdata.phone}}</P>
+    </mat-card-content>
+  </mat-card>
+</div>

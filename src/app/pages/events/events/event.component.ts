@@ -16,7 +16,7 @@ export class EventComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!:MatPaginator;
 
   dataSource = new MatTableDataSource();
-  displayedColumns=['name','description','skills','start date', 'end date','num of technologists', 'attachment', 'actions'];
+  displayedColumns=['name','description','skills','start date', 'end date','num of technologists', 'attachment'];
 
   constructor(private _eventsService: EventsService, private router: Router){}
   ngOnInit(): void {
@@ -44,6 +44,7 @@ export class EventComponent implements OnInit{
     this.router.navigate(['/events/add-event']);
   }
   onDeleteClicked(row: event){
+
     this._eventsService.delete(row.key).then(()=>{
       window.alert('deleted sucsesfull')
     });

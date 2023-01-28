@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { single } from 'rxjs';
 import { SignupComponent } from '../../auth/signup/signup.component';
 import { UpdateDialogComponent } from 'src/app/core/components/update-dialog/updat-dialog/update-dialog.component';
 import { IUser } from 'src/app/core/interfaces/user.interface';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,7 @@ import { IUser } from 'src/app/core/interfaces/user.interface';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
+  key: string =''
   userdata: any;
   loadding = true;
 
@@ -20,6 +22,8 @@ export class ProfileComponent implements OnInit{
     private dialog: MatDialog,
     private _authService:AuthService,
     private router: Router,
+    private activateRoute:ActivatedRoute,
+    private _userService: UsersService
   ){}
   ngOnInit(): void {
   this.getuserInfo()

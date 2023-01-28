@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { event } from 'src/app/core/interfaces/event.interface';
 import { EventsService } from 'src/app/core/services/events.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-event',
@@ -21,7 +22,10 @@ export class AddEventComponent implements OnInit{
   };
 
   formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder, private _eventsService: EventsService){
+  constructor(
+    private formBuilder: FormBuilder,
+    private _eventsService: EventsService,
+    private location:Location){
     this.formGroup = this.formBuilder.group({
       name: [null,[Validators.required]],
       description: [null,[Validators.required]],
@@ -62,7 +66,6 @@ export class AddEventComponent implements OnInit{
       attachment: this.formGroup.controls['attachment'].value,
     }).then(()=>{
       window.alert('added sucsesfull');
-      // this.router.navigate(['/events'])
     });
   }
 
@@ -71,6 +74,10 @@ export class AddEventComponent implements OnInit{
       const control = this.formGroup.get(filed);
       control?.markAsTouched({onlySelf: true})
     })
+  }
+
+  onCancelClicked(){
+    this.location.back()
   }
 
 }

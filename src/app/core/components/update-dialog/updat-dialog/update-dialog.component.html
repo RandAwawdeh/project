@@ -1,6 +1,14 @@
 <form [formGroup]="formGroup">
   <div class="row">
 
+    <div mat-card-avatar class="col">
+      <label for="file" class="logo">
+      <input id="file" type="file" (change)="onFileInputChange($event)" accept="image/">
+      <img [src]="imgSrc" alt=""
+        *ngIf="formGroup.controls['logo'].value">
+      </label>
+    </div>
+
       <input matInput type="text"  formControlName="name" placeholder="name" />
 
 
@@ -11,16 +19,12 @@
 
       <input matInput type="url" formControlName="website" placeholder="website"/>
 
-      <input matInput type="password" formControlName="password" placeholder="password"/>
-
       <mat-radio-group aria-label="Select an option" formControlName="type" class="maxWidth">
         <mat-radio-button value="NGO">NGO</mat-radio-button>
         <mat-radio-button value="Goverment">Goverment</mat-radio-button>
         <mat-radio-button value="Religious">Religious</mat-radio-button>
       </mat-radio-group>
   </div>
-
-
 
   <div class="actions">
     <button mat-raised-button color="primary" (click)="onUpdateClicked()">
