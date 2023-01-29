@@ -14,12 +14,13 @@
     <div *ngIf="!loading">
       <div *ngFor="let item of navServiceList.children">
         <mat-list-item   *ngIf="item.isUser === userInfo.isUser || item.isUser === null">
-          <a
+          <div
             [routerLink]="[item.route]"
-            (click)="onItemClicked()"
+            (click)="onItemClicked()">
+            <mat-icon mat-icon-button>{{ item.icon }}</mat-icon>
+            <label>{{item.displayName}}</label>
+        </div>
 
-            ><mat-icon mat-icon-button>{{ item.icon }}</mat-icon></a
-          >
           <!-- <div matListItemTitle class="item-text">{{ item.displayName }}</div> -->
         </mat-list-item>
       </div>

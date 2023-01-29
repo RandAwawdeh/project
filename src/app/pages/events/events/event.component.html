@@ -4,7 +4,7 @@
     <div class="col">
         <input class="filter" (keyup)="($event)" placeholder="Filter" #input>
     </div>
-    <div class="col align-end">
+    <div class="col align-end" *ngIf="userdata.isUser == false">
       <button mat-raised-button (click)="onAddClicked()" >Add Events</button>
     </div>
   </div>
