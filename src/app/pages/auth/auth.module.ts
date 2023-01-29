@@ -20,7 +20,7 @@ const MatImports = [
   MatButtonModule,
   MatRadioModule,
   MatGridListModule,
-  MatTabsModule
+  MatTabsModule,
 ]
 
 @NgModule({

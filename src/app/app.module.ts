@@ -24,6 +24,7 @@ import { NgoModule } from './pages/ngoList/ngo/ngo.module';
 import { ApproveComponent } from './pages/approve/approve/approve.component';
 import { ApproveModule } from './pages/approve/approve/approve.module';
 import { RequestModule } from './pages/request/request/request.module';
+import { HomeModule } from "./pages/home/home.module";
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { RequestModule } from './pages/request/request/request.module';
         FormsModule,
         ApproveModule,
         RequestModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HomeModule,
     ]
 })
 export class AppModule { }

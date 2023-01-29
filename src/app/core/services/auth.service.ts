@@ -46,7 +46,7 @@ export class AuthService {
     this.angularFireAuth.authState.subscribe((user) => {
       if (user) {
         if (!this.isLoggedIn) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/events']);
         }
         this.getUserById(user.uid);
 

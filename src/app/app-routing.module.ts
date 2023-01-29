@@ -14,7 +14,7 @@ import { TechnicalsListComponent } from './pages/TechnicalsList/technicals-list/
 const routes: Routes = [
   {
     path:'',
-    redirectTo: 'profile',
+    redirectTo: 'events',
     pathMatch: 'full',
   },
   {
@@ -24,6 +24,7 @@ const routes: Routes = [
   },
   {
     path:'update-profile',
+    canLoad: [AuthGuard],
     component:UpdateDialogComponent
   },
   {
@@ -43,29 +44,35 @@ const routes: Routes = [
   {
     path:'events',
     loadChildren: ()=> import('./pages/events/events.module').then((m)=>m.EventsModule),
+    canLoad: [AuthGuard],
 
   },
 
   {
     path:'technecals',
     component:TechnicalsListComponent,
+    canLoad: [AuthGuard]
   },
   {
     path:'ngo',
     component:NgoComponent,
+    canLoad: [AuthGuard]
   },
   {
     path:'approve',
     component:ApproveComponent,
+    canLoad: [AuthGuard]
   },
   {
     path:'request',
     component:RequestComponent,
+    canLoad: [AuthGuard]
   },
   {
     path: '**', //white card
     redirectTo: 'events',
     pathMatch: 'full',
+
   }
 ];
 
