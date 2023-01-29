@@ -16,7 +16,7 @@ export class AuthGuard implements CanLoad {
       if(isLoggedIn){
         return true
       }
-      this.router.navigate(['/auth/login'])
+      this.router.navigate(['/home'])
       return false;
       // throw new Error('Method not impliment');
   }
