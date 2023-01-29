@@ -10,5 +10,4 @@ export interface event{
   purpose?:string;
   volunteerIn?: string;
   UID?: string;
-
 }

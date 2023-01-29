@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { event } from 'src/app/core/interfaces/event.interface';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { EventsService } from 'src/app/core/services/events.service';
 
 
@@ -15,12 +16,23 @@ import { EventsService } from 'src/app/core/services/events.service';
 export class EventComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!:MatPaginator;
 
+  userdata: any;
+
   dataSource = new MatTableDataSource();
   displayedColumns=['name','description','skills','start date', 'end date','num of technologists', 'attachment'];
 
-  constructor(private _eventsService: EventsService, private router: Router){}
+  constructor(
+    private _eventsService: EventsService,
+    private router: Router,
+    private _authService: AuthService
+    ){}
   ngOnInit(): void {
-    this.getAllData()
+    this.getAllData();
+    this._authService.userInfo.subscribe((user)=>{
+      if(user){
+        this.userdata=user;
+      }
+    })
   }
 
 

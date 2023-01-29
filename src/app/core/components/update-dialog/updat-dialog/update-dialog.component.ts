@@ -5,6 +5,7 @@ import { AuthService } from '../../../services/auth.service';
 import { UploadService } from '../../../services/upload.service';
 import { Location } from '@angular/common';
 import { UsersService } from '../../../services/users.service';
+import { IUser } from 'src/app/core/interfaces/user.interface';
 
 @Component({
   selector: 'app-update-dialog',
@@ -15,6 +16,8 @@ export class UpdateDialogComponent implements OnInit{
   key:string='';
   formGroup!: FormGroup;
   imgSrc: any;
+
+  userdata: any;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -47,6 +50,11 @@ export class UpdateDialogComponent implements OnInit{
         this.getById()
       }
     })
+    this._authService.userInfo.subscribe((user)=>{
+      if(user){
+        this.userdata=user;
+      }
+    })
   }
   getById(){
     this._usersService.getById(this.key).subscribe((result:any)=>{
@@ -57,12 +65,13 @@ export class UpdateDialogComponent implements OnInit{
       age: result['age'],
       city: result['city'],
       skills: result['skills'],
-      jobDesc: result['name'],
+      jobDesc: result['jobDesc'],
       availableTime: result['availableTime'],
       courses: result['courses'],
       type: result['type'],
       website:result['website'],
       logo: result['logo'],
+
     })
     this.imgSrc=result['logo']
     })

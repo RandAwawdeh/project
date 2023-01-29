@@ -17,7 +17,7 @@ export class TechnicalsListComponent implements OnInit{
 
   displayedColumns :string[]=['name','email','phone','city','skills','jobDesc','courses','availableTime']
   city:string[]=['All','Amman','Zarqa','Irbid','Aqaba','Mafraq','Madaba','As-Salt','Jerash','Maan','Karak','Tafilah','Fuheis','Ajloun']
-skills:string[]=['Teamwork','Relationship building','Confidence','Customer service','Sales','Problem solving','Training','IT tools','Leadership']
+skills:string[]=['Teamwork','Backend','Frontend','UX desgin','UI design','Angular','react','Problem solving','Flatter','IT tools','design', 'CCNA','Web development', 'Mobile application']
 defaultValue = "All";
 filterDictionary= new Map<string,string>()
 usersFilters: UsersFilter[]=[];
